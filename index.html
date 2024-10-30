@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Diagram Visualizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/editor/editor.main.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class='bx bx-network-chart'></i> Advanced Diagram Visualizer</h1>
+            <div class="control-group">
+                <button id="themeToggle">
+                    <i class='bx bx-palette'></i> Toggle Theme
+                </button>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <div class="control-group">
+                <div class="select-wrapper">
+                    <select id="diagramType">
+                        <option value="flowchart">Flowchart</option>
+                        <option value="sequence">Sequence Diagram</option>
+                        <option value="classDiagram">Class Diagram</option>
+                        <option value="stateDiagram">State Diagram</option>
+                        <option value="erDiagram">ER Diagram</option>
+                        <option value="gantt">Gantt Chart</option>
+                        <option value="pie">Pie Chart</option>
+                        <option value="gitGraph">Git Graph</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="select-wrapper">
+                    <select id="theme">
+                        <option value="default">Default Theme</option>
+                        <option value="forest">Forest</option>
+                        <option value="dark">Dark</option>
+                        <option value="neutral">Neutral</option>
+                    </select>
+                </div>
+            </div>
+            <button id="renderBtn">
+                <i class='bx bx-play'></i> Render
+            </button>
+            <button id="downloadBtn">
+                <i class='bx bx-download'></i> Download SVG
+            </button>
+            <button id="zoomInBtn">
+                <i class='bx bx-zoom-in'></i>
+            </button>
+            <button id="zoomOutBtn">
+                <i class='bx bx-zoom-out'></i>
+            </button>
+            <button id="resetZoomBtn">
+                <i class='bx bx-reset'></i>
+            </button>
+        </div>
+
+        <div class="templates-panel">
+            <h3>Quick Templates</h3>
+            <div class="template-buttons">
+                <button data-template="travel">Travel Flowchart</button>
+                <button data-template="development">Development Process</button>
+                <button data-template="architecture">System Architecture</button>
+                <button data-template="userFlow">User Flow</button>
+                <button data-template="upsc">UPSC Exam Flow</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="editor-container">
+                <div id="editor"></div>
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+            <div class="preview-container">
+                <div id="diagram"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/loader.js"></script>
+    <script src="templates.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>
